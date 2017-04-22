@@ -1,0 +1,693 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/chovy/app-notify">app-notify (v2.0.2)</a>
+</h1>
+<h4>Send SMS and email notifications from within your node.js app</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.app-notify">module app-notify</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-notify.app-notify">
+            function <span class="apidocSignatureSpan"></span>app-notify
+            <span class="apidocSignatureSpan">(cfg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-notify.email">
+            function <span class="apidocSignatureSpan">app-notify.</span>email
+            <span class="apidocSignatureSpan">(cfg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-notify.sms">
+            function <span class="apidocSignatureSpan">app-notify.</span>sms
+            <span class="apidocSignatureSpan">(cfg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">app-notify.</span>email.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">app-notify.</span>sms.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.app-notify.email">module app-notify.email</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-notify.email.email">
+            function <span class="apidocSignatureSpan">app-notify.</span>email
+            <span class="apidocSignatureSpan">(cfg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.app-notify.email.prototype">module app-notify.email.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-notify.email.prototype.respondWithError">
+            function <span class="apidocSignatureSpan">app-notify.email.prototype.</span>respondWithError
+            <span class="apidocSignatureSpan">(err, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-notify.email.prototype.respondWithSuccess">
+            function <span class="apidocSignatureSpan">app-notify.email.prototype.</span>respondWithSuccess
+            <span class="apidocSignatureSpan">(data, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-notify.email.prototype.send">
+            function <span class="apidocSignatureSpan">app-notify.email.prototype.</span>send
+            <span class="apidocSignatureSpan">(opts, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.app-notify.sms">module app-notify.sms</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-notify.sms.sms">
+            function <span class="apidocSignatureSpan">app-notify.</span>sms
+            <span class="apidocSignatureSpan">(cfg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.app-notify.sms.prototype">module app-notify.sms.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-notify.sms.prototype.respondWithError">
+            function <span class="apidocSignatureSpan">app-notify.sms.prototype.</span>respondWithError
+            <span class="apidocSignatureSpan">(err, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-notify.sms.prototype.respondWithSuccess">
+            function <span class="apidocSignatureSpan">app-notify.sms.prototype.</span>respondWithSuccess
+            <span class="apidocSignatureSpan">(data, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.app-notify.sms.prototype.send">
+            function <span class="apidocSignatureSpan">app-notify.sms.prototype.</span>send
+            <span class="apidocSignatureSpan">(opts, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.app-notify" id="apidoc.module.app-notify">module app-notify</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.app-notify.app-notify" id="apidoc.element.app-notify.app-notify">
+        function <span class="apidocSignatureSpan"></span>app-notify
+        <span class="apidocSignatureSpan">(cfg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Notify(cfg){
+  if (!(this instanceof Notify)) {
+    return new Notify(cfg);
+  }
+
+  this.cfg = cfg || {};
+  this.email = new Email(this.cfg);
+  this.sms = new Sms(this.cfg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.app-notify.email" id="apidoc.element.app-notify.email">
+        function <span class="apidocSignatureSpan">app-notify.</span>email
+        <span class="apidocSignatureSpan">(cfg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Email(cfg){
+  if (!(this instanceof Email)) {
+    return new Email(cfg);
+  }
+
+  this.cfg = cfg || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    from: 'sender@example.com'
+};
+
+var Notify = require('app-notify');
+var notify = new Notify(cfg);
+
+//send an email
+notify.<span class="apidocCodeKeywordSpan">email</span>({
+    subject: 'This is a test',
+    message: 'Hello world!'
+})
+.then(function(data){
+    console.log(data);
+})
+.catch(function(err){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.app-notify.sms" id="apidoc.element.app-notify.sms">
+        function <span class="apidocSignatureSpan">app-notify.</span>sms
+        <span class="apidocSignatureSpan">(cfg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Sms(cfg){
+  if (!(this instanceof Sms)) {
+    return new Sms(cfg);
+  }
+
+  this.cfg = cfg || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+to: 'xxx-xxx-xxxx', //recipient
+from: 'yyy-yyy-yyyy' //your twilio assigned phone number
+};
+
+var Notify = require('app-notify');
+var notify = new Notify(cfg);
+
+notify.<span class="apidocCodeKeywordSpan">sms</span>({
+message: 'Hello world'
+})
+.then(function(data){
+console.log(data);
+})
+.catch(function(err){
+console.error(err);
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.app-notify.email" id="apidoc.module.app-notify.email">module app-notify.email</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.app-notify.email.email" id="apidoc.element.app-notify.email.email">
+        function <span class="apidocSignatureSpan">app-notify.</span>email
+        <span class="apidocSignatureSpan">(cfg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Email(cfg){
+  if (!(this instanceof Email)) {
+    return new Email(cfg);
+  }
+
+  this.cfg = cfg || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    from: 'sender@example.com'
+};
+
+var Notify = require('app-notify');
+var notify = new Notify(cfg);
+
+//send an email
+notify.<span class="apidocCodeKeywordSpan">email</span>({
+    subject: 'This is a test',
+    message: 'Hello world!'
+})
+.then(function(data){
+    console.log(data);
+})
+.catch(function(err){
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.app-notify.email.prototype" id="apidoc.module.app-notify.email.prototype">module app-notify.email.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.app-notify.email.prototype.respondWithError" id="apidoc.element.app-notify.email.prototype.respondWithError">
+        function <span class="apidocSignatureSpan">app-notify.email.prototype.</span>respondWithError
+        <span class="apidocSignatureSpan">(err, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">respondWithError = function (err, method){
+  if ( typeof method === 'function' ) {
+    return method(err);
+  }
+
+  return method.reject(err);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    })
+    .catch(function(err){
+      cb(err);
+    });
+}.bind(this)
+    ], function(err, data){
+if ( err ) {
+  return this.<span class="apidocCodeKeywordSpan">respondWithError</span>(err, method);
+}
+
+//remove undefined items in data array from response
+data = data.filter(function(d){
+  return typeof d !== 'undefined';
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.app-notify.email.prototype.respondWithSuccess" id="apidoc.element.app-notify.email.prototype.respondWithSuccess">
+        function <span class="apidocSignatureSpan">app-notify.email.prototype.</span>respondWithSuccess
+        <span class="apidocSignatureSpan">(data, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">respondWithSuccess = function (data, method){
+  if ( typeof method === 'function' ){
+    return method(null, data);
+  }
+
+  return method.resolve(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      }
+
+      //remove undefined items in data array from response
+      data = data.filter(function(d){
+        return typeof d !== 'undefined';
+      });
+
+      return this.<span class="apidocCodeKeywordSpan">respondWithSuccess</span>(data, method);
+    }.bind(this));
+
+    if ( method.promise ) {
+      return method.promise;
+    }
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.app-notify.email.prototype.send" id="apidoc.element.app-notify.email.prototype.send">
+        function <span class="apidocSignatureSpan">app-notify.email.prototype.</span>send
+        <span class="apidocSignatureSpan">(opts, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (opts, cb){
+  var cfg = this.cfg;
+  var method = !cb ? q.defer() : cb;
+
+  opts = _.merge(this.cfg, opts);
+
+  //use defaults from config.json if none specified
+  opts.subject = opts.subject || opts.email.subject;
+
+  //check for a message
+  if ( !opts.message || !opts.message.length ) {
+    return this.respondWithError({ error: 'Please provide a message', code: 'MISSING_MESSAGE' }, method);
+  }
+
+  if ( !opts.smtp ) {
+    return this.respondWithError({ error: 'Please provide a smtp settings', code: 'MISSING_SMTP' }, method);
+  }
+
+  var user = opts.smtp.user;
+  var pass = opts.smtp.pass;
+  var host = opts.smtp.host;
+  var port = opts.smtp.port;
+
+  if ( !user || !pass || !host || !port ) {
+    return this.respondWithError({ error: 'Please provide smtp.user, smtp.pass, smtp.host and smtp.port', code: 'MISSING_SMTP' },
+method);
+  }
+
+  //check for email headers
+  if ( !opts.email.to || !opts.subject ) {
+    return this.respondWithError({ error: 'Please provide email to and subject', code: 'MISSING_HEADERS' }, method);
+  }
+
+  //from should not be overriden as it is required in email config settings by the provider
+  if ( !opts.email.from ) {
+    return this.respondWithError({ error: 'Please provide email.from', code: 'MISSING_HEADERS' }, method);
+  }
+
+  var transporter = nodemailer.createTransport({
+    host: host,
+    port: port,
+//		service: 'Gmail', //see https://github.com/andris9/nodemailer-wellknown#supported-services
+    auth: {
+      user: user,
+      pass: pass
+    }
+  });
+
+  var mailOptions = {
+    from: opts.email.from,
+    to: opts.email.to,
+    subject: opts.subject,
+    text: opts.message
+  };
+
+  transporter.sendMail(mailOptions, function(err, data){
+    if ( err ) {
+      return this.respondWithError(err, method);
+    }
+
+    return this.respondWithSuccess(data, method);
+  }.bind(this));
+
+  if ( method.promise ) {
+    return method.promise;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    from: 'sender@example.com'
+};
+
+var Notify = require('app-notify');
+var notify = new Notify(cfg);
+
+//sends both
+notify.<span class="apidocCodeKeywordSpan">send</span>({
+    subject: 'This is a test',
+    message: 'Hello world'
+});
+
+//disable email
+notify.cfg.email.disabled = true;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.app-notify.sms" id="apidoc.module.app-notify.sms">module app-notify.sms</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.app-notify.sms.sms" id="apidoc.element.app-notify.sms.sms">
+        function <span class="apidocSignatureSpan">app-notify.</span>sms
+        <span class="apidocSignatureSpan">(cfg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Sms(cfg){
+  if (!(this instanceof Sms)) {
+    return new Sms(cfg);
+  }
+
+  this.cfg = cfg || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+to: 'xxx-xxx-xxxx', //recipient
+from: 'yyy-yyy-yyyy' //your twilio assigned phone number
+};
+
+var Notify = require('app-notify');
+var notify = new Notify(cfg);
+
+notify.<span class="apidocCodeKeywordSpan">sms</span>({
+message: 'Hello world'
+})
+.then(function(data){
+console.log(data);
+})
+.catch(function(err){
+console.error(err);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.app-notify.sms.prototype" id="apidoc.module.app-notify.sms.prototype">module app-notify.sms.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.app-notify.sms.prototype.respondWithError" id="apidoc.element.app-notify.sms.prototype.respondWithError">
+        function <span class="apidocSignatureSpan">app-notify.sms.prototype.</span>respondWithError
+        <span class="apidocSignatureSpan">(err, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function respondWithError(err, method){
+  if ( typeof method === 'function' ) {
+    return method(err);
+  }
+
+  return method.reject(err);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    })
+    .catch(function(err){
+      cb(err);
+    });
+}.bind(this)
+    ], function(err, data){
+if ( err ) {
+  return this.<span class="apidocCodeKeywordSpan">respondWithError</span>(err, method);
+}
+
+//remove undefined items in data array from response
+data = data.filter(function(d){
+  return typeof d !== 'undefined';
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.app-notify.sms.prototype.respondWithSuccess" id="apidoc.element.app-notify.sms.prototype.respondWithSuccess">
+        function <span class="apidocSignatureSpan">app-notify.sms.prototype.</span>respondWithSuccess
+        <span class="apidocSignatureSpan">(data, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function respondWithSuccess(data, method){
+  if ( typeof method === 'function' ){
+    return method(null, data);
+  }
+
+  return method.resolve(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      }
+
+      //remove undefined items in data array from response
+      data = data.filter(function(d){
+        return typeof d !== 'undefined';
+      });
+
+      return this.<span class="apidocCodeKeywordSpan">respondWithSuccess</span>(data, method);
+    }.bind(this));
+
+    if ( method.promise ) {
+      return method.promise;
+    }
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.app-notify.sms.prototype.send" id="apidoc.element.app-notify.sms.prototype.send">
+        function <span class="apidocSignatureSpan">app-notify.sms.prototype.</span>send
+        <span class="apidocSignatureSpan">(opts, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function send(opts, cb){
+  var cfg = this.cfg;
+  var method = !cb ? q.defer() : cb;
+
+  opts = _.merge(this.cfg, opts);
+
+  //check for a message
+  if ( !opts.message || !opts.message.length ) {
+    return this.respondWithError({ error: 'Please provide a message', code: 'MISSING_MESSAGE' }, method);
+  }
+
+  var sid = opts.sms.sid;
+  var auth = opts.sms.auth;
+
+  //check for required auth
+  if ( !sid || !auth ) {
+    return this.respondWithError({ error: 'Please provide sms.sid and sms.auth.', code: 'MISSING_AUTH' }, method);
+  }
+
+  //check for sms headers
+  if ( !opts.sms.from || !opts.sms.to ) {
+    return this.respondWithError({ error: 'Please provide sms.from and sms.to', code: 'MISSING_HEADERS' }, method);
+  }
+
+  var client = require('twilio')(sid, auth);
+
+  client.sendMessage({
+    to: opts.sms.to, // Any number Twilio can deliver to
+    from: opts.sms.from, // A number you bought from Twilio and can use for outbound communication
+    body: opts.message // body of the SMS message
+
+  }, function(err, data) { //this function is executed when a response is received from Twilio
+
+    if ( err ) {
+      return this.respondWithError(err, method);
+    }
+
+    // "responseData" is a JavaScript object containing data received from Twilio.
+    // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
+    // http://www.twilio.com/docs/api/rest/sending-sms#example-1
+
+    //console.log(data.body); // outputs "word to your mother."
+    return this.respondWithSuccess(data, method);
+  }.bind(this));
+
+  //return promise if no callback
+  if ( method.promise ) {
+    return method.promise;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    from: 'sender@example.com'
+};
+
+var Notify = require('app-notify');
+var notify = new Notify(cfg);
+
+//sends both
+notify.<span class="apidocCodeKeywordSpan">send</span>({
+    subject: 'This is a test',
+    message: 'Hello world'
+});
+
+//disable email
+notify.cfg.email.disabled = true;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
